@@ -20,37 +20,34 @@ import io.swagger.annotations.ApiOperation;
 @Service
 @RestController
 @Component
-@Api(value = "Api rest para módulo" )
+@Api(value = "Api rest para módulo")
 @RequestMapping("/wsmod")
 public class ModuloService {
-	
+
 	@Autowired
 	ModuloRepository mr;
-	
-	@GetMapping 
-	@ApiOperation(value="Retorna uma lista de Módulos")
+
+	@GetMapping
+	@ApiOperation(value = "Retorna uma lista de Módulos")
 	@RequestMapping("/listar")
-	public @ResponseBody Iterable<Modulo> listaModulos() 
-	{
+	public @ResponseBody Iterable<Modulo> listaModulos() {
 		Iterable<Modulo> listaModulos = mr.findAll();
-		return listaModulos;				
+		return listaModulos;
 	}
-	
+
 	@PostMapping
 	@ApiOperation(value = "Salva um Módulo")
 	@RequestMapping("/cadastrar")
-	public void cadastraModulo(@RequestBody Modulo modulo) 
-	{
-		 mr.save(modulo);
-		 System.out.println("Modulo cadastrado com sucesso!");
+	public void cadastraModulo(@RequestBody Modulo modulo) {
+		mr.save(modulo);
+		System.out.println("Modulo cadastrado com sucesso!");
 	}
-	
+
 	@DeleteMapping
-	@ApiOperation(value="Deleta um Módulo")
+	@ApiOperation(value = "Deleta um Módulo")
 	@RequestMapping("/deletar/{id}")
-	@RestResource(exported=false)
-	public Modulo deletaModulo(@RequestBody Modulo idModulo) 
-	{
+	@RestResource(exported = false)
+	public Modulo deletaModulo(@RequestBody Modulo idModulo) {
 		mr.delete(idModulo);
 		System.out.println("Modulo deletado com sucesso!");
 		return idModulo;

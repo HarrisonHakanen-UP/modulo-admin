@@ -30,7 +30,7 @@ public class Modulo {
 	private List<Menu> Menus = new ArrayList<>();
 
 	public Modulo() {
-		
+
 		this.Menus = new ArrayList<>();
 	}
 
@@ -123,5 +123,4 @@ public class Modulo {
 				+ "]";
 	}
 
-	
 }

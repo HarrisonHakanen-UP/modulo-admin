@@ -11,7 +11,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 @Configuration
 public class DataConfiguration {
-	
+
 //	@Bean
 //	public DataSource dataSource() 
 //	{

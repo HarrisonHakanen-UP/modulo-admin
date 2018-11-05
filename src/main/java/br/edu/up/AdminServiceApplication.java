@@ -18,14 +18,14 @@ import org.springframework.context.annotation.Bean;
 public class AdminServiceApplication {
 
 	@Value("${fila.nome}")
-    private String nomeDaFila;
+	private String nomeDaFila;
 
 	public static void main(String[] args) {
 		SpringApplication.run(AdminServiceApplication.class, args);
 	}
-	
+
 	@Bean
-    public Queue fila() {
-        return new Queue(nomeDaFila, true);
-    }
+	public Queue fila() {
+		return new Queue(nomeDaFila, true);
+	}
 }

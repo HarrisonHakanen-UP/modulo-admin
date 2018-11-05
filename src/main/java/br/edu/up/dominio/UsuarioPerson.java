@@ -9,7 +9,7 @@ public class UsuarioPerson {
 	private String Email;
 
 	private String Senha;
-	
+
 	private boolean Status;
 
 	public int getIdPessoa() {

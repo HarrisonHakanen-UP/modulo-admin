@@ -19,30 +19,20 @@ import springfox.documentation.builders.PathSelectors;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
-	
+
 	@Bean
 	public Docket productApi() {
-		return new Docket(DocumentationType.SWAGGER_2)
-				.select()
-				.apis(RequestHandlerSelectors.basePackage("br.com.up"))
-				.paths(regex("/.*"))
-				.build()
-				.apiInfo(metaInfo());
+		return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.basePackage("br.com.up"))
+				.paths(regex("/.*")).build().apiInfo(metaInfo());
 	}
-	
+
 	private ApiInfo metaInfo() {
-		
-        ApiInfo apiInfo = new ApiInfo(
-                "ADMIN API REST",
-                "API REST MODULO ADMIN",
-                "1.0",
-                "Terms of Service",
-                new Contact("Módulo Admin", "https://github.com/ModuloAdmin/ModuloAdm/tree/master/ModuloAdm",
-                        "moduloadm18@gmail.com"),
-                "Apache License Version 2.0",
-                "https://www.apache.org/licesen.html", new ArrayList<VendorExtension>()
-        );
-		
+
+		ApiInfo apiInfo = new ApiInfo("ADMIN API REST", "API REST MODULO ADMIN", "1.0", "Terms of Service",
+				new Contact("Módulo Admin", "https://github.com/ModuloAdmin/ModuloAdm/tree/master/ModuloAdm",
+						"moduloadm18@gmail.com"),
+				"Apache License Version 2.0", "https://www.apache.org/licesen.html", new ArrayList<VendorExtension>());
+
 		return apiInfo;
 	}
 

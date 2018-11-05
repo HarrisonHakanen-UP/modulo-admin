@@ -20,40 +20,37 @@ import io.swagger.annotations.ApiOperation;
 @Service
 @RestController
 @Component
-@Api(value = "Api rest para usuário" )
+@Api(value = "Api rest para usuário")
 @RequestMapping("/wsu")
 public class UsuarioService {
 
 	@Autowired
 	UsuarioRepository ur;
 
-	@GetMapping 
-	@ApiOperation(value="Retorna uma lista de Usuários")
+	@GetMapping
+	@ApiOperation(value = "Retorna uma lista de Usuários")
 	@RequestMapping("/listar")
-	public @ResponseBody Iterable<Usuario> listaUsuario() 
-	{
+	public @ResponseBody Iterable<Usuario> listaUsuario() {
 		Iterable<Usuario> listaUsuario = ur.findAll();
-		return listaUsuario;				
+		return listaUsuario;
 	}
-		
+
 	@PostMapping
 	@ApiOperation(value = "Salva um Usuário")
 	@RequestMapping("/cadastrar")
-	public void cadastraUsuario(@RequestBody Usuario usuario) 
-	{
+	public void cadastraUsuario(@RequestBody Usuario usuario) {
 		ur.save(usuario);
 		System.out.println("Usuario cadastrado com sucesso!");
 	}
-	
+
 	@DeleteMapping
-	@ApiOperation(value="Deleta um Usuário")
+	@ApiOperation(value = "Deleta um Usuário")
 	@RequestMapping("/deletar/{id}")
-	@RestResource(exported=false)
-	public Usuario deletaUsuario(@RequestBody Usuario idUsuario) 
-	{
+	@RestResource(exported = false)
+	public Usuario deletaUsuario(@RequestBody Usuario idUsuario) {
 		ur.delete(idUsuario);
 		System.out.println("Usuário deletado com sucesso!");
 		return idUsuario;
 	}
-	
+
 }

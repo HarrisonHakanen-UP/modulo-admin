@@ -13,7 +13,6 @@ import br.edu.up.dominio.Menu;
 import br.edu.up.dominio.Modulo;
 import br.edu.up.repository.ModuloRepository;
 
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CrudModulo {
@@ -24,33 +23,32 @@ public class CrudModulo {
 	@Test
 	public void CrudModuloTeste() {
 
-		 List<Menu> menu = new ArrayList<>();
+		List<Menu> menu = new ArrayList<>();
 
 		moduloRepository.save(new Modulo("compras", 4, menu));
 		moduloRepository.save(new Modulo("vendas", 5, menu));
 
 		// altera descrição do modulo
-/*		Modulo modulo = new Modulo();
-
-		modulo = moduloRepository.findOne(1);
-		modulo.setDsModulo("financeiro");
-		moduloRepository.save(modulo);
-
-		modulo = moduloRepository.findOne(2);
-		modulo.setDsModulo("RH");
-		moduloRepository.save(modulo);*/
+		/*
+		 * Modulo modulo = new Modulo();
+		 * 
+		 * modulo = moduloRepository.findOne(1); modulo.setDsModulo("financeiro");
+		 * moduloRepository.save(modulo);
+		 * 
+		 * modulo = moduloRepository.findOne(2); modulo.setDsModulo("RH");
+		 * moduloRepository.save(modulo);
+		 */
 
 		// busca os modulos
 		System.out.println("\n*************Módulos*************");
 		moduloRepository.findAll().forEach(System.out::println);
 
-/*		// deleta os modulos
-		modulo = moduloRepository.findOne(1);
-		moduloRepository.delete(modulo);
-
-		modulo = moduloRepository.findOne(2);
-		moduloRepository.delete(modulo);
-		*/
+		/*
+		 * // deleta os modulos modulo = moduloRepository.findOne(1);
+		 * moduloRepository.delete(modulo);
+		 * 
+		 * modulo = moduloRepository.findOne(2); moduloRepository.delete(modulo);
+		 */
 //		moduloRepository.deleteAll();
 
 	}

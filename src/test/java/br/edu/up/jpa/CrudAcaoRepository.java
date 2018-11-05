@@ -9,8 +9,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import br.edu.up.dominio.Acao;
 import br.edu.up.repository.AcaoRepository;
 
-
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CrudAcaoRepository {
@@ -23,7 +21,7 @@ public class CrudAcaoRepository {
 	 */
 	@Test
 	public void AcaoCrud() {
-		
+
 		// salvar ação
 		acaoRepository.save(new Acao(1, "visualizar"));
 		acaoRepository.save(new Acao(2, "buscar"));

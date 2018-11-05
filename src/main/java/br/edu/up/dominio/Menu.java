@@ -20,7 +20,7 @@ public class Menu {
 
 	@Column
 	private String DsMenu;
-	
+
 	@JsonIgnore
 	@ManyToOne
 	@JoinColumn
@@ -59,7 +59,7 @@ public class Menu {
 	public void setModulo(Modulo modulo) {
 		this.modulo = modulo;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

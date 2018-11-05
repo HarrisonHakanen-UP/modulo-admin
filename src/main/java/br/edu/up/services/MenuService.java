@@ -20,37 +20,34 @@ import io.swagger.annotations.ApiOperation;
 @Service
 @RestController
 @Component
-@Api(value = "Api rest para Menu" )
+@Api(value = "Api rest para Menu")
 @RequestMapping("/wsm")
 public class MenuService {
-	
+
 	@Autowired
 	MenuRepository mr;
-	
-	@GetMapping 
-	@ApiOperation(value="Retorna uma lista de Menus")
+
+	@GetMapping
+	@ApiOperation(value = "Retorna uma lista de Menus")
 	@RequestMapping("/listar")
-	public @ResponseBody Iterable<Menu> listaMenus() 
-	{
+	public @ResponseBody Iterable<Menu> listaMenus() {
 		Iterable<Menu> listaMenus = mr.findAll();
-		return listaMenus;			
+		return listaMenus;
 	}
-	
+
 	@PostMapping
 	@ApiOperation(value = "Salva um Menu")
 	@RequestMapping("/cadastrar")
-	public void cadastraMenu(@RequestBody Menu menu) 
-	{
+	public void cadastraMenu(@RequestBody Menu menu) {
 		mr.save(menu);
 		System.out.println("Menu cadastrado com sucesso!");
 	}
-	
+
 	@DeleteMapping
-	@ApiOperation(value="Deleta um Menu")
+	@ApiOperation(value = "Deleta um Menu")
 	@RequestMapping("/deletar/{id}")
-	@RestResource(exported=false)
-	public Menu deletaMenu(@RequestBody Menu idMenu) 
-	{
+	@RestResource(exported = false)
+	public Menu deletaMenu(@RequestBody Menu idMenu) {
 		mr.delete(idMenu);
 		System.out.println("Menu deletado com sucesso!");
 		return idMenu;

@@ -12,7 +12,7 @@ public class Runner implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		sender.send("deu boaaaaaaaaaaaaaaaaaaaaa");
-		System.out.println("Mensagem enviada...");
+		System.out.println("Enviando mensagem ao RabbitMQ...");
+		sender.send("Mensagem de conexão: Módulo ADMIN");
 	}
 }

@@ -31,21 +31,21 @@ public class Usuario {
 	@ManyToMany
 	@JoinTable(name = "usuario_acao", joinColumns = { @JoinColumn(name = "idUsuario") }, inverseJoinColumns = {
 			@JoinColumn(name = "idAcao") })
-	private List<Acao> acoes = new  ArrayList<>();
+	private List<Acao> acoes = new ArrayList<>();
 
 	// Relacionamento implementado
 
 	@ManyToMany
 	@JoinTable(name = "usuario_modulo", joinColumns = { @JoinColumn(name = "idUsuario") }, inverseJoinColumns = {
 			@JoinColumn(name = "idModulo") })
-	private List<Modulo> modulos = new  ArrayList<>();
+	private List<Modulo> modulos = new ArrayList<>();
 
 	public Usuario() {
 		this.modulos = new ArrayList<>();
 	}
 
 	public Usuario(Integer idexterno, String nome, List<Acao> acoes, List<Modulo> modulos) {
-		this.modulos = new  ArrayList<Modulo>();
+		this.modulos = new ArrayList<Modulo>();
 		this.Idexterno = idexterno;
 		this.Nome = nome;
 		this.acoes = acoes;

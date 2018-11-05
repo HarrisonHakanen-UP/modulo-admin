@@ -96,7 +96,5 @@ public class Acao {
 	public String toString() {
 		return "Acao [idAcao=" + idAcao + ", CdAcao=" + CdAcao + ", DsAcao=" + DsAcao + "]";
 	}
-	
-	
 
 }
